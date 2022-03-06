@@ -1,0 +1,84 @@
+<html>
+    <style>
+        table{
+            width:300px;
+            font-size:25px;
+        }
+        table,td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        
+        }
+        .result{
+            width:250px;
+            height:60px;
+            font-size:25px;
+        }
+        </style>
+    <body>
+        <input type='text' class='result'>
+    <table>
+        
+        <tr>
+          <td><button>*</button></td>
+          <td><button>/</button></td>
+          <td><button>-</button></td>
+          <td><button>+</button></td>
+        </tr>
+        <tr>
+            <td><button>1</button></td>
+            <td><button>2</button></td>
+            <td><button>3</button></td>
+            <td><button>4</button></td>
+          </tr>
+          <tr>
+            <td><button>5</button></td>
+            <td><button>6</button></td>
+            <td><button>7</button></td>
+            <td><button>8</button></td>
+          </tr>
+          <tr>
+            <td><button>9</button></td>
+            <td><button>0</button></td>
+            <td><button>.</button></td>
+            <td><button>=</button></td>
+          </tr>
+          <tr>
+            <td><button>C</button></td>
+          </tr>  
+        
+      </table>
+    </body>
+    <script>
+         const button_list = document.querySelectorAll("button");
+         let result_element=document.querySelector('.result');
+         
+         
+         button_list.forEach(function(button) {
+  button.addEventListener('click',e=>{
+      if(e.target.textContent!='C'){
+      if(e.target.textContent!='='){ 
+          
+
+    
+      let element_value=e.target.textContent;
+      result_element.value+=element_value;
+      
+      }
+      else{
+          result_element.value=eval(result_element.value)
+      }
+      
+      }
+      else{
+          result_element.value='';
+      }
+      
+  })
+});
+
+
+
+        </script>
+
+</html>

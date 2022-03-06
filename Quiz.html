@@ -1,0 +1,139 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <style>
+            #box{
+                background-color:yellow;
+                width:700px;
+                height: 500px;
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+                color: brown;
+                margin-bottom: 20px;
+            }
+           .que_div{
+               background-color: aqua;
+               color:brown;
+               
+           }
+           .button{
+               margin-top: 100px;
+           }
+           .selection_item{
+               font-size: 30px;
+               color:green;
+               list-style-type: none;
+           }
+
+
+            
+
+        </style>
+    </head>
+    <body>
+    <div id="box">
+       <h3>Choose the Correct Artist</h3>
+       <div class="que_div"><h5 class="que"></h5>
+       <p></p></div>
+       <ul class="selection_item">
+
+       </ul>
+       <button class="button" onclick="calculate()">Next </button>
+
+
+       
+
+    </div><br>
+    
+    
+</body>
+<script>
+    
+    let box=document.querySelector('#box')
+    let que_box=document.querySelector('.que');
+    let radio_content=document.querySelector('.selection_item');
+    let error=document.querySelector('p');
+    let count=0;
+    let mark=0;
+
+    let lists=[
+        {que:"Who sings 'All too Well'",
+         item_array:['Taylor Swift','Billi Ellish','Conna Gray','Ed Sherran'],
+         correctAns:0,},
+         {que:"Which animal is the biggest in the World",
+         item_array:['Elephant','Tiger','Wale','Lion'],
+         correctAns:2,},
+         {
+          que:"Who is the handsome actor",
+          item_array:['Keanu Reeves','Leonado Dicarprio','Timothee','Johnny Depp'],
+          correctAns:0,
+         }
+    ];
+     
+     let origin_list_length=lists.length;
+
+    
+
+    window.onload = function() {
+        displayCurrentQues();
+        document.querySelector('.button').addEventListener('click',function(){
+            
+            var radioBtnsChecked = document.querySelector('input[type=radio]:checked');
+            if(radioBtnsChecked===null){
+                
+                alert('Please Select');
+            }
+            
+            else{
+                if(parseInt(radioBtnsChecked.value)===lists[count].correctAns){
+                    mark++;
+                    
+                    
+           
+                    
+                }
+                count++;
+                if(count>origin_list_length-1){
+                alert("Mark is"+mark);
+                alert('NO more question');
+            }
+            else{
+                radio_content.innerHTML="";
+                
+                
+                displayCurrentQues();
+            }
+            }
+           
+            
+            
+        })
+
+         }
+
+
+function displayCurrentQues(){
+   list=lists[count];
+   que_box.innerHTML=list.que;
+   items=list.item_array;
+   let length_item=items.length;
+   for(i=0;i<length_item;i++){
+    let li = document.createElement('li');
+    li.innerHTML = '<input type="radio" value="' + i + '" name="dynradio" />'+items[i]
+   radio_content.appendChild(li);
+   }
+   
+
+}
+    
+    
+    
+    
+    
+
+</script>
+    </html>

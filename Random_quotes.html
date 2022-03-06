@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <style>
+            #box{
+                background-color:sienna;
+                width:500px;
+                height: 500px;
+                color:white;
+                font-size: 28px;
+                text-align: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+    <div id="box"></div><br>
+    <button onclick="random()">Generate Random Quote</button>
+</body>
+<script>
+    let box=document.querySelector('#box')
+    let quotes=['Do Your Best','Life is such a Pain','Softest thing is kindness','The world is for you']
+    let quote_length=quotes.length;
+   
+
+    function random(){
+        let index=[Math.floor(Math.random() * quote_length)]
+        box.innerHTML=quotes[index]
+    }
+    
+</script>
+    </html>

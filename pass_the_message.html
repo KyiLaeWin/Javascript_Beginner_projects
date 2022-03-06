@@ -1,0 +1,45 @@
+
+<html>
+    <head>
+        <style>
+            #box{
+                background-color:pink;
+                width:500px;
+                height: 500px;
+            }
+            #inline{
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div id="box">
+        <div id="inline">
+        <h3>Enter you text</h3>
+        <input type="text" name="input" id="input">
+        <button onclick="submit()">Submit</button>
+        <h3>Your input text is</h3>
+        <p id="result"></p>
+        </div>
+    </div><br>
+    
+</body>
+<script>
+    let result_text=document.querySelector('#result')
+    let input_text=document.querySelector('#input')
+    
+    
+    
+
+    function submit(){
+        if(input_text.value!=""){
+       result_text.innerHTML=input_text.value}
+       else{
+           result_text.innerHTML="Error:Enter Your Input"
+           setTimeout(() => result_text.innerHTML="", 3000)
+       }
+    }
+    
+</script>
+    </html>

@@ -1,0 +1,39 @@
+
+<html>
+    <head>
+        <style>
+            #box{
+                background-color:red;
+                width:500px;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="box"></div><br>
+    <button onclick="change()">Change Background Color</button>
+</body>
+<script>
+    let box=document.querySelector('#box')
+    let colors=['black','green','yellow','blue']
+    let color_length=colors.length;
+    let i=0;
+   /* setInterval(() => {
+       
+       
+        box.style.backgroundColor=colors[i];
+        i+=1;
+        if(i==color_length){i=0}
+        
+
+        
+    }, 1000);*/
+
+    function change(){
+        box.style.backgroundColor=colors[i];
+        i++;
+        if(i==color_length){i=0};
+    }
+    
+</script>
+    </html>

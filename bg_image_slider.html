@@ -1,0 +1,54 @@
+
+<html>
+    <head>
+        <style>
+            #box{
+                background-color:pink;
+                width:500px;
+                height: 500px;
+            }
+            img{
+                
+                width:500px;
+                height: 500px;
+            }
+          
+
+        </style>
+    </head>
+    <body>
+    <div id="box">
+        <img src="tree-736885__480.jpg" id="image">
+    </div><br>
+    <button onclick="next()">Next</button><br>
+    <button onclick="prev()">Prev</button>
+
+    
+</body>
+<script>
+   let img_array=["1.jpeg","3.jpg","4.jpeg","7.jpeg","8.jpeg"];
+    let image_frame=document.querySelector("#image")
+    let num_img=img_array.length
+    let i=0
+
+    function next(){
+        image_frame.src=img_array[i]
+        i++
+        if(i>num_img-1){i=0}
+    
+    
+    }
+    function prev(){
+        image_frame.src=img_array[i]
+        i--
+        if(i<0){i=num_img-1}
+    }
+
+
+
+
+
+    
+</script>
+    </html>
+    

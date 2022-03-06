@@ -1,0 +1,59 @@
+
+<html>
+    <head>
+        <style>
+            #box{
+                background-color:pink;
+                width:500px;
+                height: 500px;
+            }
+            #inline{
+                text-align: center;
+            }
+            #result{
+                font-size: 40px;
+                color:green;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div id="box">
+        <div id="inline">
+        <h3>Counter</h3>
+        <p id="result">0</p>
+        
+        <button onclick="increase()">Add Count</button><br>
+        <button onclick="decrease()">Lower Count</button>
+
+        
+       
+        </div>
+    </div><br>
+    
+</body>
+<script>
+    let result_text=document.querySelector('#result')
+    
+    
+    
+    
+    let count=0;
+    function increase(){
+       count++
+       result_text.innerHTML=count
+       if(count>0){
+           result_text.style.color="green";
+       }
+    }
+
+    function decrease(){
+       count--
+       result_text.innerHTML=count
+       if(count<0){
+           result_text.style.color="red";
+       }
+    }
+    
+</script>
+    </html>
